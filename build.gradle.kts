@@ -14,14 +14,15 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-tasks.test {
+tasks.withType(Test::class) {
     useJUnitPlatform()
-    tasks.withType<io.gitlab.arturbosch.detekt.Detekt> {
-        reports {
-            html.required.set(true)
-            xml.required.set(true)
-            txt.required.set(false)
-        }
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt> {
+    reports {
+        html.required.set(true)
+        xml.required.set(true)
+        txt.required.set(false)
     }
 }
 
