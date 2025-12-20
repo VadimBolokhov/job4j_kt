@@ -2,7 +2,7 @@ package ru.job4j.oop
 
 import java.util.UUID
 
-class Item(
+data class Item(
     /** Id заявки */
     var id: UUID,
     /** Имя */
